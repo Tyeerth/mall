@@ -12,6 +12,10 @@
         <module>common</module>
         <module>service</module>
         <module>model</module>
+        <module>service-client</module>
+        <module>service-gateway</module>
+        <module>service/service-home</module>
+        <module>service/service-cart</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -42,6 +46,7 @@
     </properties>
 
     <!--配置dependencyManagement锁定依赖的版本-->
+    <!--所有依赖子项目并不会继承，我们还要在子项目中引入我们需要的依赖，才能进行使用。此时我们在子项目中不用设置版本-->
     <dependencyManagement>
         <dependencies>
             <dependency>

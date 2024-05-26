@@ -1,8 +1,8 @@
 package com.xdu.common.auth;
 
-import com.atguigu.ssyx.common.constant.RedisConst;
-import com.atguigu.ssyx.common.utils.JwtHelper;
-import com.atguigu.ssyx.vo.user.UserLoginVo;
+import com.xdu.common.constant.RedisConst;
+import com.xdu.common.util.JwtHelper;
+import com.xdu.vo.user.UserLoginVo;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -36,7 +36,7 @@ public class UserLoginInterceptor implements HandlerInterceptor {
             //根据userId到Redis获取用户信息
             UserLoginVo userLoginVo = (UserLoginVo)redisTemplate.opsForValue()
                                         .get(RedisConst.USER_LOGIN_KEY_PREFIX + userId);
-            //获取数据放到ThreadLocal里面
+            //TODO 获取数据放到ThreadLocal里面
             if(userLoginVo != null) {
                 AuthContextHolder.setUserId(userLoginVo.getUserId());
                 AuthContextHolder.setWareId(userLoginVo.getWareId());

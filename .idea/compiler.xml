@@ -2,14 +2,31 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common-util" />
-        <module name="model" />
+        <module name="service-gateway" />
+        <module name="service-client-product" />
+        <module name="service-client-search" />
+        <module name="service-client-order" />
+        <module name="service-home" />
+        <module name="service-sys" />
+        <module name="rabbitmq-util" />
         <module name="service-util" />
-        <module name="service" />
+        <module name="service-order" />
+        <module name="service-client-activity" />
+        <module name="service-acl" />
+        <module name="service-client-cart" />
+        <module name="service-product" />
+        <module name="service-user" />
+        <module name="service-cart" />
+        <module name="service-search" />
+        <module name="model" />
+        <module name="service-client-user" />
+        <module name="service-activity" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,7 +34,25 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common-util" options="-parameters" />
       <module name="model" options="-parameters" />
-      <module name="service" options="-parameters" />
+      <module name="rabbitmq-util" options="-parameters" />
+      <module name="service" options="" />
+      <module name="service-acl" options="-parameters" />
+      <module name="service-activity" options="-parameters" />
+      <module name="service-cart" options="-parameters" />
+      <module name="service-client" options="" />
+      <module name="service-client-activity" options="-parameters" />
+      <module name="service-client-cart" options="-parameters" />
+      <module name="service-client-order" options="-parameters" />
+      <module name="service-client-product" options="-parameters" />
+      <module name="service-client-search" options="-parameters" />
+      <module name="service-client-user" options="-parameters" />
+      <module name="service-gateway" options="-parameters" />
+      <module name="service-home" options="-parameters" />
+      <module name="service-order" options="-parameters" />
+      <module name="service-product" options="-parameters" />
+      <module name="service-search" options="-parameters" />
+      <module name="service-sys" options="-parameters" />
+      <module name="service-user" options="-parameters" />
       <module name="service-util" options="-parameters" />
     </option>
   </component>

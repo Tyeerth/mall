@@ -1,0 +1,60 @@
+server:
+  port: 8200
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes: #一旦找到匹配的路由规则，网关将按照规则中的 uri 进行请求转发。由于这里的 uri 设置为 lb://service-acl，表示通过负载均衡器访问名为 service-acl 的服务。
+  #Spring Cloud Gateway 会查询注册中心（如 Eureka、Consul 等）获取 service-acl 服务的实例列表，根据负载均衡策略选择一个实例，并将原始请求转发到选定实例的相应端点，如 http://service-acl-instance:port/api/users/acl/details。
+        - id: service-acl # 路由规则的 ID
+          uri: lb://service-acl #目标服务的 URL
+          predicates: # 断言条件
+            - Path=/*/acl/** # 这里使用 /*/acl/** 表示匹配所有以 /acl/ 开头的路径
+
+        - id: service-sys
+          uri: lb://service-sys
+          predicates:
+            - Path=/*/sys/**
+
+        - id: service-product
+          uri: lb://service-product
+          predicates:
+            - Path=/*/product/**
+
+        - id: service-activity
+          uri: lb://service-activity
+          predicates:
+            - Path=/*/activity/**
+
+        - id: service-order
+          uri: lb://service-order
+          predicates:
+            - Path=/*/order/**
+
+        - id: service-payment
+          uri: lb://service-payment
+          predicates:
+            - Path=/*/payment/**
+
+        - id: service-user
+          uri: lb://service-user
+          predicates:
+            - Path=/*/user/**
+
+        - id: service-search
+          uri: lb://service-search
+          predicates:
+            - Path=/*/search/**
+
+        - id: service-home
+          uri: lb://service-home
+          predicates:
+            - Path=/*/home/**
+
+        - id: service-cart
+          uri: lb://service-cart
+          predicates:
+            - Path=/*/cart/**

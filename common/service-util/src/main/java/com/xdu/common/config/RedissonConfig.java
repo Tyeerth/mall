@@ -5,14 +5,13 @@ import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 import org.redisson.config.SingleServerConfig;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.util.StringUtils;
 
 @Data
-@Configuration
-@ConfigurationProperties("spring.redis")
+// TODO 分布式锁先注释掉
+//@Configuration
+//@ConfigurationProperties("spring.redis")
 public class RedissonConfig {
 
     private String host;

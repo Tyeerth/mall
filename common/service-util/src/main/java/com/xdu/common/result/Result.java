@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class Result<T> {
-
     //状态码
     private Integer code;
     //信息
@@ -51,6 +50,10 @@ public class Result<T> {
     //成功的方法
     public static<T> Result<T> ok(T data) {
         Result<T> result = build(data, ResultCodeEnum.SUCCESS);
+        return result;
+    }
+    public static<T> Result<T> ok() {
+        Result<T> result = build(null, ResultCodeEnum.SUCCESS);
         return result;
     }
 

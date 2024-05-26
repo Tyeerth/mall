@@ -46,8 +46,8 @@ public class Swagger2Config {
                 // /api/user/login
                 // /admin/order/findAll
                 // /add/PERSON/all
-                .apis(RequestHandlerSelectors.basePackage("com.atguigu.ssyx"))
-                .paths(PathSelectors.regex("/api/.*"))
+                .apis(RequestHandlerSelectors.basePackage("*"))
+                .paths(PathSelectors.regex("/*"))
                 .build()
                 .globalOperationParameters(pars);
         return webApi;
@@ -72,7 +72,7 @@ public class Swagger2Config {
                 .apiInfo(adminApiInfo())
                 .select()
                 //只显示admin路径下的页面
-                .apis(RequestHandlerSelectors.basePackage("com.atguigu.ssyx"))
+                .apis(RequestHandlerSelectors.basePackage("*"))
                 //.paths(PathSelectors.regex("/admin/.*"))
                 .build()
                 .globalOperationParameters(pars);

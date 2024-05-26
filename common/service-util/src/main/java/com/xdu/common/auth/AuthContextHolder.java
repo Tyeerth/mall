@@ -1,6 +1,8 @@
 package com.xdu.common.auth;
 
 
+import com.xdu.vo.user.UserLoginVo;
+
 //ThreadLocal工具类
 public class AuthContextHolder {
 
